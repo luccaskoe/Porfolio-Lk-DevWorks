@@ -1,0 +1,140 @@
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 1.25rem 1.5rem;
+    background: rgba(11, 15, 20, 0.97);
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.25s,
+      transform 0.25s,
+      visibility 0.25s;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .project-card.big,
+  .project-card.wide,
+  .project-card:nth-child(5) {
+    grid-column: auto;
+    min-height: 380px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* RESPONSIVIDADE SKILLS */
+@media (max-width: 760px) {
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding-inline: 1rem;
+  }
+
+  .skills-head h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .skill-card {
+    min-height: auto;
+    padding: 1.35rem;
+  }
+
+  .tech-list {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-mark {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* REDUÇÃO DE MOVIMENTO */
+@media (prefers-reduced-motion: reduce) {
+  .skill-card,
+  .skill-top i,
+  .tech-item,
+  .tech-item img {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* RESPONSIVIDADE ABOUT */
+@media (max-width: 760px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-img {
+    width: min(100%, 300px);
+    margin: 0 auto;
+  }
+
+  .about-text {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text p {
+    font-size: 0.94rem;
+    line-height: 1.75;
+  }
+
+  .stats {
+    gap: 1.5rem;
+  }
+}
+
+/* RESPONSIVIDADE SERVIÇOS */
+@media (min-width: 768px) {
+  .service-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,138 @@
+/* PROJETOS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+.project-card {
+  grid-column: span 2;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  min-height: 340px;
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+}
+
+.project-card.big {
+  grid-column: span 4;
+  min-height: 420px;
+}
+
+.project-card.wide,
+.project-card:nth-child(5) {
+  grid-column: span 3;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+/* IMAGEM DOS PROJETOS */
+.project-card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  background: var(--bg);
+  opacity: 0.55;
+  transition:
+    transform 0.5s ease,
+    opacity 0.3s ease;
+}
+
+.project-card:hover > img {
+  transform: scale(1.02);
+  opacity: 0.65;
+}
+
+.info {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  background: linear-gradient(transparent 20%, rgba(11, 15, 20, 0.95));
+}
+.category {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.links {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.links a {
+  border-bottom: 1px solid var(--accent);
+}
+.links a:hover {
+  color: var(--accent);
+}
+
+.portfolio-notice {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: linear-gradient(transparent 20%, rgba(11, 15, 20, 0.95)); 
+  border-left: 4px solid #007bff; 
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center; 
+}
+
+.portfolio-notice strong{
+  color: #fff;
+}
+
+/* TECNOLOGIAS DOS PROJETOS */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tech li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.65rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-tech li:hover {
+  color: var(--text);
+  border-color: rgba(99, 184, 159, 0.3);
+}
+
+.project-tech img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}

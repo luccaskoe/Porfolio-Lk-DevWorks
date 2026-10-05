@@ -1,0 +1,255 @@
+/* SOBRE */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+/* IMAGEM */
+.about-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-img:hover {
+  border-color: rgba(99, 184, 159, 0.25);
+  transform: translateY(-3px);
+}
+
+/* CONTEÚDO */
+.about-text {
+  max-width: 700px;
+}
+
+.about-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.about-text h2 {
+  margin: 0 0 1.5rem;
+  color: var(--text);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+/* TEXTO */
+.about-text p {
+  max-width: 65ch;
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.about-text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ESTATÍSTICAS */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stats li {
+  min-width: 110px;
+}
+
+.stats strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.stats span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+/* SERVIÇOS */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 2px;
+  margin-top: 2.5rem;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.service-list article {
+  background: var(--bg);
+  padding: 1.6rem;
+  transition: background 0.2s;
+}
+
+.service-list article:hover {
+  background: var(--surface);
+}
+
+.service-list i {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.service-list h3 {
+  margin: 0.8rem 0 0.3rem;
+}
+
+.service-list p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* FAQ */
+.faq-list {
+  max-width: 760px;
+  margin-top: 2rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq-q i {
+  color: var(--accent);
+  font-size: 1.3rem;
+  transition: transform 0.3s;
+}
+
+.faq-q[aria-expanded="true"] i {
+  transform: rotate(45deg);
+}
+
+.faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s;
+}
+
+.faq-a p {
+  overflow: hidden;
+  color: var(--text-muted);
+}
+
+.faq-item.open .faq-a {
+  grid-template-rows: 1fr;
+  padding-bottom: 1.2rem;
+}
+
+/* CTA FINAL */
+.cta {
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(99, 184, 159, 0.12),
+      transparent 65%
+    ),
+    var(--surface);
+  border-block: 1px solid var(--border);
+}
+.cta h2,
+.cta p {
+  margin-inline: auto;
+}
+.cta p {
+  color: var(--text-muted);
+  max-width: 50ch;
+}
+.cta .actions {
+  justify-content: center;
+}
+
+/* FOOTER */
+.footer {
+  padding: 4rem max(1.25rem, calc((100% - var(--max)) / 2)) 1.5rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-top p,
+.footer li {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-top: 0.6rem;
+}
+
+.footer-label {
+  display: block;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.footer h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
